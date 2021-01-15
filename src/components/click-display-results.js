@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from "react";
+import RemoveNa from './click-scrap-filter.js'
 
 const SectionComponent = (props) => {
   const [sectionInfo, setSectionInfo] = useState(undefined);
   const [dataArray, setDataArray] = useState([]);
-
   const [firstKey, setFirstKey] = useState([]);
   const [sectionKeys, setSectionKeys] = useState([]);
   const [render, setRender] = useState(false);
   const [nodeKeys, setNodeKeys] = useState([]);
   const [page, setPage] = useState(1);
-
 
   const getSection = async (data) => {
     try {
@@ -28,6 +27,9 @@ const SectionComponent = (props) => {
     }
   };
   useEffect(() => {
+  
+
+
     getSection(1);
     return () => {};
   }, []);
@@ -63,10 +65,7 @@ const SectionComponent = (props) => {
     }
   }
 
-  function prepData(data) {
-    let string = data.split("_").join(" ").replace("id", "");
-    return string[0].toUpperCase() + string.substring(1);
-  }
+
 
   return (
     <div>
@@ -114,26 +113,15 @@ const SectionComponent = (props) => {
                     props.chooseItemData(sectionInfo.results[i]);
                   }}
                 >
-                  <div
-                    className=""
-                    
-                  >
+                  <div className="">
                     <h1 className="section-subclass">
                       {dataArray[i][firstKey]}
                     </h1>
+                    {/* removes n/a records */}
+                    <RemoveNa keys={Object.keys(dataArray[i])} data={dataArray[i]}/>
+
                     <div className="scrap-info">
-                      <div className="scrap-node">
-                        {" "}
-                        {prepData(keys[1])} : {dataArray[i][keys[1]]}
-                      </div>
-                      <div className="scrap-node">
-                        {" "}
-                        {prepData(keys[2])} : {dataArray[i][keys[2]]}
-                      </div>
-                      <div className="scrap-node">
-                        {" "}
-                        {prepData(keys[3])} : {dataArray[i][keys[3]]}
-                      </div>
+                    
                     </div>
                   </div>
                 </div>
@@ -145,5 +133,9 @@ const SectionComponent = (props) => {
     </div>
   );
 };
+
+
+
+
 
 export default SectionComponent;

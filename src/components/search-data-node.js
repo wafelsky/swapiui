@@ -55,7 +55,7 @@ function RenderItemNode(props) {
                 >
                   {data[nodeKeys[i]]}
                 </div>
-              ) : (
+              ) : data[nodeKeys[i]]!== "n/a" && (
                 <div>
                   {prepData(nodeKeys[i])}: {data[nodeKeys[i]]}
                 </div>

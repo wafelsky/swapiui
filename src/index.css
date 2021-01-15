@@ -20,10 +20,10 @@ overflow-y: hidden;
 min-height: 50rem;
 
 
-
-
-
 }
+
+
+
 html,body{ overflow-x: hidden; user-select:none; -webkit-user-drag: none; }
 
 h1{

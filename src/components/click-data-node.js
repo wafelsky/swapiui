@@ -14,6 +14,7 @@ const ItemComponent = (props) => {
 
     keys.map((item, i) => {
       for (let n = 0; n < filterArray.length; n++) {
+
         keys[i] === filterArray[n] && (n = filterArray.length);
         if (keys[i] !== filterArray[n] && n === filterArray.length - 1) {
           properkeys.push(keys[i]);
@@ -44,10 +45,12 @@ const ItemComponent = (props) => {
                 >
                   {item[itemKeys[i]]}
                 </div>
-              ) : (
-                <div key={i} className="search-item">
+              ) : item[itemKeys[i]]!== "n/a" && ( 
+               
+                <div key={i} className="node-font" style={{letterSpacing:"1.3px", fontSize:"18px"}}>
                   {prepData(itemKeys[i])} : {item[itemKeys[i]]}
                 </div>
+             
               )}
             </div>
           );

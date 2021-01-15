@@ -271,7 +271,7 @@ input:focus, textarea:focus, select:focus{
   .search-item-wrapper{
   
     max-width:900px;
-    margin-left:120px;
+    margin-left:180px;
 
     width: max-content;
     background-color:$c4;
@@ -414,7 +414,7 @@ justify-content: center;
 }
 
 .click-item-wrapper{
-  cursor: pointer;
+ 
   max-width:900px;
   margin:auto;
   width:max-content;
@@ -491,4 +491,9 @@ margin-left:-300px;
 .destroy-earth-button:hover{
   color:rgba(180, 34, 34, 0.788);;
   background-color: rgba(0, 0, 0, 0.61);
+}
+
+
+.node-font{
+  font-family: anton !important;
 }

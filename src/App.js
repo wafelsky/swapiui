@@ -1,25 +1,73 @@
-import logo from './logo.svg';
-import './App.css';
+import MainComponent from "./components/main.js";
+
+import React, { useEffect, useState } from "react";
+
+import "./stylesheets/main.scss";
+import "./stylesheets/globalParams.scss";
+
+
+
+
+
 
 function App() {
+  let token = localStorage.getItem("userKey");
+  let [tokenAproved, setTokenAproved] = useState(false)
+
+  useEffect(() => {
+    
+    token !== null && (setTokenAproved(true))
+   
+    }, [tokenAproved]);
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="center-flex">
+      <meta
+        name="viewport"
+        content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=320, height=device-height"
+      />
+      <meta
+        charSet="utf-8"
+        content="width=device-width, initial-scale=1.0"
+      ></meta>
+      
+  {tokenAproved === true &&
+      <div className="center">
+        <MainComponent/>
+      </div>
+  }
+  {
+    token===null && 
+    <div className="public-center">
+    <div style={{fontSize:"3rem"}}>You are not authenticated Lord Veider is coming unless you click the button below</div>
+    <div onClick={()=>{
+      localStorage.setItem("userKey", token);
+      setTokenAproved(true)
+    }} className="destroy-earth-button"> Destroy Tatooine</div>
+    </div>
+    
+  }
     </div>
   );
 }
+const blackListed = [
+  "characters",
+  "planets",
+  "starships",
+  "vehicles",
+  "species",
+  "films",
+  "residents",
+  "tittle",
+  "species",
+  "url",
+  "created",
+  "edited",
+  "title",
+  "homeworld",
+  "pilots",
+  "people",
+];
 
-export default App;
+export { App, blackListed };

@@ -78,7 +78,7 @@ const MainComponent = () => {
   useEffect(() => {
     if (sendEndpoint.length !== 0) {
       /// disable below for websites because of the htacces
-      setSearchFromUrl(sendEndpoint);
+     setSearchFromUrl(sendEndpoint);
     }
     getall();
     return () => {};
@@ -94,7 +94,7 @@ const MainComponent = () => {
         <a style={{ fontSize: "15px" }}>Mazur Jakub</a>
       </h1>
       <div className="center">
-        <div className="row-align top-bar">
+        <div className="row-align top-bar"  style={{maxWidth:"90vw"}}>
           {/* SEARCH COMPONENT WITH SEARCHBAR and navbar*/}
           {sectionName.length !== 0 && (
             <div>

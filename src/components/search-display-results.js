@@ -73,7 +73,7 @@ function DisplaySearchedDataComponent(props) {
   }, [hasRendered]);
 
   return (
-    <div style={{ color: "white" }}>
+    <div style={{ color: "white",  }} className="center" >
       {refreshSearch === false && (
         <div>
           <div>{hasRendered === true && <h1>Didnt find anything :(</h1>}</div>
@@ -100,29 +100,33 @@ function DisplaySearchedDataComponent(props) {
                     </div>
                   );
                 })}
+                
               </div>
+              
             </div>
           )}
           {/* I've had big time problems with refreshing on state change, example underneeth */}
-          {props.searchedData.length>0 && props.searchedData!==null && (
-            <div style={{ color: "white" }}>
-              {oneElementArray.map((item, i) => {
-                if (ref.current === 0) {
-                  ref.current = 1;
-              
-                 
-                  setHasRendered(1);
-                }
-                return (
-                  <div key={i}>
-                    <RenderItemNode itemNode={itemNode} />
-             
-                  </div>
-                );
-              })}
-            </div>
-          )}
+          
         </div>
+      )}
+     
+      {props.searchedData.length>0 && props.searchedData!==null && (
+        <div className="center hielo">
+          {oneElementArray.map((item, i) => {
+            if (ref.current === 0) {
+              ref.current = 1;
+              setHasRendered(1);
+            }
+            return (
+              <div key={i} className="center">
+                <RenderItemNode itemNode={itemNode} />
+              </div>
+            );
+          })}
+
+
+        </div>
+      
       )}
     </div>
   );

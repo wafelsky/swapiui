@@ -237,11 +237,12 @@ const SearchComponent = (props) => {
             </div>
           </form>
         </div>
+        {renderComponent === true && props.isUserSearching === true && (
+          <SelectedSearchedItem searchedData={sendProps} />
+        )}
+     
       </div>
-
-      {renderComponent === true && props.isUserSearching === true && (
-        <SelectedSearchedItem searchedData={sendProps} />
-      )}
+    
     </div>
   );
 };

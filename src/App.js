@@ -5,21 +5,13 @@ import React, { useEffect, useState } from "react";
 import "./stylesheets/main.scss";
 import "./stylesheets/globalParams.scss";
 
-
-
-
-
-
 function App() {
   let token = localStorage.getItem("userKey");
-  let [tokenAproved, setTokenAproved] = useState(false)
+  let [tokenAproved, setTokenAproved] = useState(false);
 
   useEffect(() => {
-    
-    token !== null && (setTokenAproved(true))
-   
-    }, [tokenAproved]);
-
+    token !== null && setTokenAproved(true);
+  }, [tokenAproved]);
 
   return (
     <div className="center-flex">
@@ -31,23 +23,30 @@ function App() {
         charSet="utf-8"
         content="width=device-width, initial-scale=1.0"
       ></meta>
-      
-  {tokenAproved === true &&
-      <div className="center">
-        <MainComponent/>
-      </div>
-  }
-  {
-    token===null && 
-    <div className="public-center">
-    <div style={{fontSize:"3rem"}}>You are not authenticated Lord Veider is coming unless you click the button below</div>
-    <div onClick={()=>{
-      localStorage.setItem("userKey", token);
-      setTokenAproved(true)
-    }} className="destroy-earth-button"> Destroy Tatooine</div>
-    </div>
-    
-  }
+
+      {tokenAproved === true && (
+        <div className="center">
+          <MainComponent />
+        </div>
+      )}
+      {token === null && (
+        <div className="public-center">
+          <div style={{ fontSize: "3rem" }}>
+            You are not authenticated Lord Veider is coming unless you click the
+            button below
+          </div>
+          <div
+            onClick={() => {
+              localStorage.setItem("userKey", token);
+              setTokenAproved(true);
+            }}
+            className="destroy-earth-button"
+          >
+            {" "}
+            Destroy Tatooine
+          </div>
+        </div>
+      )}
     </div>
   );
 }
@@ -64,8 +63,7 @@ const blackListed = [
   "url",
   "created",
   "edited",
-  
- 
+
   "homeworld",
   "pilots",
   "people",

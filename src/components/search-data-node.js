@@ -43,7 +43,7 @@ function RenderItemNode(props) {
     return string[0].toUpperCase() + string.substring(1);
   }
   return (
-    <div className="center">
+
       <div style={{ color: "white" }} className="search-item-wrapper ">
         {nodeKeys.map((item, i) => {
           return (
@@ -63,7 +63,7 @@ function RenderItemNode(props) {
             </div>
           );
         })}
-      </div>
+     
     </div>
   );
 }

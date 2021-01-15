@@ -110,7 +110,7 @@ input:focus, textarea:focus, select:focus{
 }
 
   .search-input{
-    margin-left:80px;
+    margin-left:90px;
     letter-spacing: 3px;
     padding-left:20px;
     padding-right:120px;
@@ -137,10 +137,11 @@ input:focus, textarea:focus, select:focus{
     font-family: anton;
   }
   .search-grid-item{
-
+   
     font-family:star-wars2;
     cursor: pointer;
-    width: 200px;
+
+    max-width:80vw !important;
     padding:20px;
     border-radius:10px;
     text-align: center;
@@ -154,8 +155,8 @@ input:focus, textarea:focus, select:focus{
   border-radius:20px;
   }
   .search-grid{
-    
-    max-width:80vw;
+    margin: auto;
+    max-width:80vw !important;
   }
   .search-grid-item:hover{
  
@@ -172,6 +173,7 @@ input:focus, textarea:focus, select:focus{
     font-family:star-wars2;
 
     width: 200px;
+    max-width:80vw;
     padding:20px;
     border-radius:10px;
     text-align: center;
@@ -269,10 +271,10 @@ input:focus, textarea:focus, select:focus{
     letter-spacing: 0.5px;
   }
   .search-item-wrapper{
-  
+    
+    display:relative;
     max-width:900px;
-    margin-left:180px;
-
+   // margin-left:180px;
     width: max-content;
     background-color:$c4;
     padding:40px;
@@ -289,7 +291,7 @@ input:focus, textarea:focus, select:focus{
   .search-wrapper{
     @include trans(0.1s);
     z-index: 100;
-    margin-bottom:20px;
+    margin-bottom:120px;
     align-self: center;
   }
   .section-buttons{
@@ -422,7 +424,7 @@ justify-content: center;
   background-color:$c4;
   padding:40px;
   border-radius:20px;
- 
+
   font-size:17px;
 
   
@@ -433,7 +435,8 @@ justify-content: center;
 }
 
 .navbar-wrapper{
-  margin:100px;
+  max-width:95vw;
+  margin:auto;
   margin-top:0px;
 }
 .submit-glass{

@@ -21,7 +21,7 @@ function DisplaySearchedDataComponent(props) {
       const jsonData = await response.json();
       setItemNode(jsonData);
       setRenderNode(true)
-      console.log(renderNode)
+     
    
     } catch (err) {
      console.error(err.message);
@@ -32,10 +32,10 @@ function DisplaySearchedDataComponent(props) {
   function checkRender() {
     setTimeout(() => {
       if (ref.current === 0 && props.searchedData !==0) {
-        // console.log(hasRendered)
+    
         setRefreshSearch(true);
         setTimeout(() => {
-          console.log("----in renderchecker ----");
+     
           if (ref.current === 0 && props.searchedData.length !== 0 && props.searchedData.length !== 1) {
             checkRender();
           }
@@ -48,8 +48,7 @@ function DisplaySearchedDataComponent(props) {
   /////////Probably should have used class component for that...
   useEffect(() => {
     if(props.searchedData.length === 1){
-    console.log("--rendernode--")
-    console.log(renderNode)
+   
     if(renderNode ===null || renderNode ===false)
     setTimeout(() => {
       if (props.searchedData.length === 1) {
@@ -61,8 +60,7 @@ function DisplaySearchedDataComponent(props) {
   }}, );
 
   useEffect(() => {
-    console.log("--one item timeout--")
-        console.log(props.searchedData)
+
    
         if(props.searchedData>1){
     checkRender()
@@ -85,7 +83,7 @@ function DisplaySearchedDataComponent(props) {
                 {props.searchedData.map((item, i) => {
                   if (ref.current === 0) {
                     ref.current = 1;
-                  //  console.log("----Inside Map---");
+                 
                   setHasRendered(1);
                   }
                   return (
@@ -111,7 +109,7 @@ function DisplaySearchedDataComponent(props) {
               {oneElementArray.map((item, i) => {
                 if (ref.current === 0) {
                   ref.current = 1;
-                  console.log("----Inside Map---");
+              
                  
                   setHasRendered(1);
                 }

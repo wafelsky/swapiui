@@ -64,7 +64,8 @@ const blackListed = [
   "url",
   "created",
   "edited",
-  "title",
+  
+ 
   "homeworld",
   "pilots",
   "people",

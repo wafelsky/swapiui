@@ -108,14 +108,15 @@ const SectionComponent = (props) => {
                   key={i}
                   className="item-button"
                   style={{ marginTop: "20px" }}
+                  onClick={() => {
+                    props.itemName(dataArray[i][firstKey]);
+                    props.selectItem(i);
+                    props.chooseItemData(sectionInfo.results[i]);
+                  }}
                 >
                   <div
                     className=""
-                    onClick={() => {
-                      props.itemName(dataArray[i][firstKey]);
-                      props.selectItem(i);
-                      props.chooseItemData(sectionInfo.results[i]);
-                    }}
+                    
                   >
                     <h1 className="section-subclass">
                       {dataArray[i][firstKey]}

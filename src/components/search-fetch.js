@@ -182,7 +182,7 @@ const SearchComponent = (props) => {
                   className="fas fa-search"
                 ></i>
               </div>
-              <div
+              <div className="filter-button"
                 onClick={() => {
                   setShowFilter(showFilter === "none" ? "" : "none");
                 }}

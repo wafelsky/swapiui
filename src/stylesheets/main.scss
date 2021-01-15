@@ -137,6 +137,7 @@ input:focus, textarea:focus, select:focus{
     font-family: anton;
   }
   .search-grid-item{
+
     font-family:star-wars2;
     cursor: pointer;
     width: 200px;
@@ -160,7 +161,7 @@ input:focus, textarea:focus, select:focus{
  
   color:rgb(197, 60, 60) !important;
   font-family: star-wars2;
-  box-shadow: 0 0 40px $c4;
+ 
   transform: translateY(-10px);
   background-color:rgb(27, 26, 26)
   }
@@ -278,6 +279,7 @@ input:focus, textarea:focus, select:focus{
     border-radius:20px;
   }
   .search-item-header{
+    text-align: center;
     font-family: star-wars2;
   }
   
@@ -313,6 +315,7 @@ input:focus, textarea:focus, select:focus{
 }
 
 .section-grid{
+  overflow:visible;
   position: relative;
 width:800px;
 max-width:100vw;
@@ -383,6 +386,7 @@ justify-content: center;
 }
 
 .item-button{
+  cursor: pointer;
   overflow: hidden;
   position: relative;
 
@@ -410,6 +414,7 @@ justify-content: center;
 }
 
 .click-item-wrapper{
+  cursor: pointer;
   max-width:900px;
   margin:auto;
   width:max-content;
@@ -432,8 +437,12 @@ justify-content: center;
   margin-top:0px;
 }
 .submit-glass{
+  cursor: pointer;
   margin-left:-100px;
   margin-right:20px;
+}
+.filter-button{
+  cursor:pointer;
 }
 
 .back-buttons-offset{

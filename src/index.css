@@ -13,7 +13,7 @@ body {
 -moz-background-size: cover;
 -o-background-size: cover;
 background-size: cover;
-min-height: 100vh; 
+height:100%; 
 overflow: hidden;
 overflow-x: hidden;
 overflow-y: hidden;
@@ -33,6 +33,16 @@ h1{
 h2{
   font-family:star-wars, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
 }
 
 a{
